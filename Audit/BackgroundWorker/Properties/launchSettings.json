@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BackgroundWorker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AuditDBConnection": "Server=tcp:msndb.database.windows.net,1433;Initial Catalog=AuditDB;Persist Security Info=False;User ID=suminda;Password=Auxenta2018!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+        "Quename": "auditqueue",
+        "ServiceBusConnection": "Endpoint=sb://servicebusmsn.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=8PwVBNYAFdZMhguHZqQkP5FPcXcPQkPdB9ZO0RQTFKE="
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: servicebus-secrets
+type: Opaque
+data:
+  servicebusconnection: RW5kcG9pbnQ9c2I6Ly9zZXJ2aWNlYnVzbXNuLnNlcnZpY2VidXMud2luZG93cy5uZXQvO1NoYXJlZEFjY2Vzc0tleU5hbWU9Um9vdE1hbmFnZVNoYXJlZEFjY2Vzc0tleTtTaGFyZWRBY2Nlc3NLZXk9OFB3VkJOWUFGZFpNaGd1SFpxUWtQNUZQY1hjUFFrUGRCOVpPMFJRVEZLRT0=
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: catalogapi-deployment
+  labels:
+    app: catalogapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: catalogapi
+  template:
+    metadata:
+      labels:
+        app: catalogapi
+    spec:
+      containers:
+      - name: catalogapi
+        image: sumindaniro/catalogapi:v1
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DB_SERVER
+          value: "msndb.database.windows.net"
+        - name: DB_NAME
+          value: "CatalogDB"
+        - name: DB_USER
+          value: "suminda"
+        - name: DB_PASSWORD
+          value: "Auxenta2018!"
+        - name: QUEUENAME
+          value: "auditqueue"
+        - name: SBCONNECTION
+          valueFrom:
+            secretKeyRef:
+              name: servicebus-secrets
+              key: servicebusconnection
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogapi-service
+spec:
+  selector:
+    app: catalogapi
+  ports:
+    - port: 80
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: auditapi-deployment
+  labels:
+    app: auditapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: auditapi
+  template:
+    metadata:
+      labels:
+        app: auditapi
+    spec:
+      containers:
+      - name: auditapi
+        image: sumindaniro/auditapi:v1
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DB_SERVER
+          value: "msndb.database.windows.net"
+        - name: DB_NAME
+          value: "AuditDB"
+        - name: DB_USER
+          value: "suminda"
+        - name: DB_PASSWORD
+          value: "Auxenta2018!"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auditapi-service
+spec:
+  selector:
+    app: auditapi
+  ports:
+    - port: 80
+  type: LoadBalancer
