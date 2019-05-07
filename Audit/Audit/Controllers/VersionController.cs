@@ -14,7 +14,7 @@ namespace Audit.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return "Version 1";
+            return "Version 2";
         }
     }
 }
