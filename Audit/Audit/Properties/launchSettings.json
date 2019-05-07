@@ -4,12 +4,12 @@
     "Audit": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/version",
       "environmentVariables": {
-        "DB_USER": "sa",
+        "DB_USER": "suminda",
         "DB_NAME": "AuditDB",
-        "DB_PASSWORD": "1234",
-        "DB_SERVER": "./",
+        "DB_PASSWORD": "Auxenta2018!",
+        "DB_SERVER": "msndb1.database.windows.net",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:5000"
@@ -17,7 +17,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values"
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/version"
     }
   }
 }

@@ -4,12 +4,12 @@
     "CatalogAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/version",
       "environmentVariables": {
         "DB_USER": "suminda",
         "DB_NAME": "CatalogDB",
         "DB_PASSWORD": "Auxenta2018!",
-        "DB_SERVER": "msndb.database.windows.net",
+        "DB_SERVER": "msndb1.database.windows.net",
         "QUEUENAME": "auditqueue",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "SBCONNECTION": "Endpoint=sb://servicebusmsn.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=8PwVBNYAFdZMhguHZqQkP5FPcXcPQkPdB9ZO0RQTFKE="
@@ -19,7 +19,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values"
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/version"
     }
   }
 }
