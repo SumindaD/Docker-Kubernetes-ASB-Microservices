@@ -20,13 +20,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
-          value: "msndb1.database.windows.net"
+          value: "<Your DB Server>"
         - name: DB_NAME
           value: "CatalogDB"
         - name: DB_USER
-          value: "suminda"
+          value: "<Your DB User>"
         - name: DB_PASSWORD
-          value: "Auxenta2018!"
+          value: "<Your DB Password>"
         - name: QUEUENAME
           value: "auditqueue"
 ---
@@ -63,13 +63,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
-          value: "msndb1.database.windows.net"
+          value: "<Your DB Server>"
         - name: DB_NAME
           value: "AuditDB"
         - name: DB_USER
-          value: "suminda"
+          value: "<Your DB User>"
         - name: DB_PASSWORD
-          value: "Auxenta2018!"
+          value: "<Your DB Password>"
 ---
 apiVersion: v1
 kind: Service

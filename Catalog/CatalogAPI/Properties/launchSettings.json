@@ -6,13 +6,12 @@
       "launchBrowser": true,
       "launchUrl": "api/version",
       "environmentVariables": {
-        "DB_USER": "suminda",
+        "DB_USER": "<Your DB User>",
         "DB_NAME": "CatalogDB",
-        "DB_PASSWORD": "Auxenta2018!",
-        "DB_SERVER": "msndb1.database.windows.net",
+        "DB_PASSWORD": "<Your DB Password>",
+        "DB_SERVER": "<Your DB Server>",
         "QUEUENAME": "auditqueue",
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "SBCONNECTION": "Endpoint=sb://servicebusmsn.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=8PwVBNYAFdZMhguHZqQkP5FPcXcPQkPdB9ZO0RQTFKE="
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:5001"
     },

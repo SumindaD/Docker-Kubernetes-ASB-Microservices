@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditAPI", "Audit\AuditAPI.csproj", "{0952736F-96BD-4030-9AEC-0C73ECFEAD87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorker", "BackgroundWorker\BackgroundWorker.csproj", "{38C0DCC7-EF70-47E0-848C-C6CE91C264AD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{0952736F-96BD-4030-9AEC-0C73ECFEAD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0952736F-96BD-4030-9AEC-0C73ECFEAD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0952736F-96BD-4030-9AEC-0C73ECFEAD87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38C0DCC7-EF70-47E0-848C-C6CE91C264AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38C0DCC7-EF70-47E0-848C-C6CE91C264AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38C0DCC7-EF70-47E0-848C-C6CE91C264AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38C0DCC7-EF70-47E0-848C-C6CE91C264AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
