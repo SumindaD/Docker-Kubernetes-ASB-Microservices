@@ -4,7 +4,7 @@ metadata:
  name: sbsecret
 type: Opaque
 data:
-  sbconnection: RW5kcG9pbnQ9c2I6Ly9zZXJ2aWNlYnVzbXNuMS5zZXJ2aWNlYnVzLndpbmRvd3MubmV0LztTaGFyZWRBY2Nlc3NLZXlOYW1lPVJvb3RNYW5hZ2VTaGFyZWRBY2Nlc3NLZXk7U2hhcmVkQWNjZXNzS2V5PUg3UDJQd0M2eFg5UTIxYy9wMkEyaGNUV2c2RjlhcHNHZmhoZlhJaUJwQ0E9
+  sbconnection: <Base 64 Encoded Service Bus Connection String>
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -28,13 +28,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
-          value: "msndb1.database.windows.net"
+          value: "<DB Server>"
         - name: DB_NAME
           value: "CatalogDB"
         - name: DB_USER
-          value: "suminda"
+          value: "<DB Username>"
         - name: DB_PASSWORD
-          value: "Auxenta2018!"
+          value: "<DB Password>"
         - name: QUEUENAME
           value: "auditqueue"
         - name: SB_CONNECTION
@@ -76,13 +76,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
-          value: "msndb1.database.windows.net"
+          value: "<DB Server>"
         - name: DB_NAME
           value: "AuditDB"
         - name: DB_USER
-          value: "suminda"
+          value: "<DB Username>"
         - name: DB_PASSWORD
-          value: "Auxenta2018!"
+          value: "<DB Password>"
 ---
 apiVersion: v1
 kind: Service
