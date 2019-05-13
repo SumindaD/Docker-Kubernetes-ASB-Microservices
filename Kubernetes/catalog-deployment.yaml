@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: catalogapi
-        image: sumindaniro/catalogapi:v1
+        image: <Your DockerHub Catalog API Image>:<Tag>
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
@@ -72,7 +72,7 @@ spec:
     spec:
       containers:
       - name: auditapi
-        image: sumindaniro/auditapi:v1
+        image: <Your DockerHub Audit API Image>:<Tag>
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
