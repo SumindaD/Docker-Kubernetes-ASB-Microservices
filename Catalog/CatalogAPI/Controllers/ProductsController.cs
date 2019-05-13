@@ -94,7 +94,16 @@ namespace CatalogAPI.Controllers
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
-            await ServiceBusHelper.SendMessageAsync($"Product Added. Name - {product.Name}, Type - {product.Type}, Price - {product.Price}");
+            try
+            {
+                await ServiceBusHelper.SendMessageAsync($"Product Added. Name - {product.Name}, Type - {product.Type}, Price - {product.Price}");
+            }
+            catch (Exception ex)
+            {
+                //Service Bus Connection Failed
+            }
+
+            
 
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
