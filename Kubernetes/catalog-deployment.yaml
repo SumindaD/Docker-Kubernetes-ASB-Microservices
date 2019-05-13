@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+ name: sbsecret
+type: Opaque
+data:
+  sbconnection: RW5kcG9pbnQ9c2I6Ly9zZXJ2aWNlYnVzbXNuMS5zZXJ2aWNlYnVzLndpbmRvd3MubmV0LztTaGFyZWRBY2Nlc3NLZXlOYW1lPVJvb3RNYW5hZ2VTaGFyZWRBY2Nlc3NLZXk7U2hhcmVkQWNjZXNzS2V5PUg3UDJQd0M2eFg5UTIxYy9wMkEyaGNUV2c2RjlhcHNHZmhoZlhJaUJwQ0E9
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -20,15 +28,20 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
-          value: "<Your DB Server>"
+          value: "msndb1.database.windows.net"
         - name: DB_NAME
           value: "CatalogDB"
         - name: DB_USER
-          value: "<Your DB User>"
+          value: "suminda"
         - name: DB_PASSWORD
-          value: "<Your DB Password>"
+          value: "Auxenta2018!"
         - name: QUEUENAME
           value: "auditqueue"
+        - name: SB_CONNECTION
+          valueFrom:
+            secretKeyRef:
+              name: sbsecret
+              key: sbconnection
 ---
 apiVersion: v1
 kind: Service
@@ -63,13 +76,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DB_SERVER
-          value: "<Your DB Server>"
+          value: "msndb1.database.windows.net"
         - name: DB_NAME
           value: "AuditDB"
         - name: DB_USER
-          value: "<Your DB User>"
+          value: "suminda"
         - name: DB_PASSWORD
-          value: "<Your DB Password>"
+          value: "Auxenta2018!"
 ---
 apiVersion: v1
 kind: Service

@@ -13,7 +13,7 @@ namespace CatalogAPI.Helper
 
         public static async Task SendMessageAsync(string message)
         {
-            queueClient = new QueueClient("<Your Azure Service Bus Connection String>", Environment.GetEnvironmentVariable("QUEUENAME"));
+            queueClient = new QueueClient(Environment.GetEnvironmentVariable("SB_CONNECTION"), Environment.GetEnvironmentVariable("QUEUENAME"));
 
             var serviceBusMessage = new Message(Encoding.UTF8.GetBytes(message));
 

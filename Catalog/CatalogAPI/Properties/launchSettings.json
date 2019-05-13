@@ -6,12 +6,13 @@
       "launchBrowser": true,
       "launchUrl": "api/version",
       "environmentVariables": {
-        "DB_USER": "<Your DB User>",
+        "DB_USER": "<DB Username>",
         "DB_NAME": "CatalogDB",
-        "DB_PASSWORD": "<Your DB Password>",
-        "DB_SERVER": "<Your DB Server>",
+        "DB_PASSWORD": "<DB Password>",
+        "DB_SERVER": "<DB Server>",
         "QUEUENAME": "auditqueue",
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SB_CONNECTION": "<Service Bus Connection>"
       },
       "applicationUrl": "http://localhost:5001"
     },
